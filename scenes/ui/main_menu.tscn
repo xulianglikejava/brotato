@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbnucwh0l3jah"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "宇宙餐厅"
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]

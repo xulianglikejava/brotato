@@ -1,0 +1,13 @@
+# Godot自动生成的文件
+.import/
+.export/
+.godot/
+.gdignore
+.editorconfig
+.DS_Store
+*.translation
+*.export_presets.cfg
+*.import_presets.cfg
+*.csharpproj
+*.sln
+*.msproj
