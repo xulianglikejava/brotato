@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4i4b28xexjlo"]
+[gd_scene load_steps=10 format=3 uid="uid://d4i4b28xexjlo"]
 
 [ext_resource type="Texture2D" uid="uid://bq5w0pu0ew0rn" path="res://assets/art/characters/players/player1/player1-sheet.png" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://bhw3y3aianvs8" path="res://scripts/characters/player.gd" id="1_t61fv"]
+[ext_resource type="PackedScene" uid="uid://itypubr3hrw1" path="res://scenes/items/now_weapon.tscn" id="3_686vu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("1_7uws0")
@@ -76,6 +77,9 @@ shape = SubResource("CapsuleShape2D_7uws0")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/Area2D"]
 position = Vector2(-5, 8)
 shape = SubResource("CapsuleShape2D_7uws0")
+
+[node name="NowWeapon" parent="Area2D" instance=ExtResource("3_686vu")]
+position = Vector2(-2, 2)
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

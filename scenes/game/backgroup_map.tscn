@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cpbvsqbkrjei6"]
+[gd_scene load_steps=8 format=4 uid="uid://cpbvsqbkrjei6"]
 
 [ext_resource type="Texture2D" uid="uid://vyqj1c48nh56" path="res://assets/类土豆兄弟/bg.png" id="1_3eaar"]
 [ext_resource type="Script" uid="uid://dyc1o2u6xd6nd" path="res://scripts/scenes/backgroup_map.gd" id="1_hfu8n"]
@@ -35,6 +35,37 @@ physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_hfu8n")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucive"]
+texture = ExtResource("1_3eaar")
+5:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+18:0/0 = 0
+18:1/0 = 0
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ljmna"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_ucive")
+
 [node name="BackgroupMap" type="Node2D"]
 script = ExtResource("1_hfu8n")
 
@@ -52,7 +83,7 @@ tile_set = SubResource("TileSet_ucive")
 [node name="Wall" type="TileMapLayer" parent="."]
 scale = Vector2(6, 6)
 tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAD//wEAAAACAAEAAAD//wIAAAACAAEAAAD//wMAAAACAAEAAAD//wQAAAACAAEAAAD//wUAAAACAAEAAAD//wYAAAACAAEAAAD//wcAAAACAAEAAAD//wgAAAACAAEAAAD//wkAAAACAAEAAAD//woAAAACAAEAAAD//wsAAAACAAEAAAD//wwAAAACAAEAAAD//w0AAAACAAEAAAD//w4AAAACAAEAAAD//w8AAAACAAEAAAD//xAAAAACAAEAAAD//xEAAAACAAEAAAD//xIAAAACAAEAAAD//xMAAAACAAEAAAAAABQAAAABAAAAAAABABQAAAABAAAAAAACABQAAAABAAAAAAADABQAAAABAAAAAAAEABQAAAABAAAAAAAFABQAAAABAAAAAAAGABQAAAABAAAAAAAHABQAAAABAAAAAAAIABQAAAABAAAAAAAJABQAAAABAAAAAAAKABQAAAABAAAAAAALABQAAAABAAAAAAAMABQAAAABAAAAAAANABQAAAABAAAAAAAOABQAAAABAAAAAAAPABQAAAABAAAAAAAQABQAAAABAAAAAAARABQAAAABAAAAAAASABQAAAABAAAAAAATABQAAAABAAAAAAAUABQAAAABAAAAAAAVABQAAAABAAAAAAAWABQAAAABAAAAAAAXABQAAAABAAAAAAAYABQAAAABAAAAAAAAAP//AAABAAIAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAKAP//AAABAAIAAAAYAP//AAABAAIAAAAXAP//AAABAAIAAAAWAP//AAABAAIAAAAVAP//AAABAAIAAAAUAP//AAABAAIAAAATAP//AAABAAIAAAASAP//AAABAAIAAAARAP//AAABAAIAAAAQAP//AAABAAIAAAAPAP//AAABAAIAAAAOAP//AAABAAIAAAANAP//AAABAAIAAAAMAP//AAABAAIAAAALAP//AAABAAIAAAAZAAAAAAAAAAEAAAAZAAEAAAAAAAEAAAAZAAIAAAAAAAEAAAAZAAMAAAAAAAEAAAAZAAQAAAAAAAEAAAAZAAUAAAAAAAEAAAAZAAYAAAAAAAEAAAAZAAcAAAAAAAEAAAAZAAgAAAAAAAEAAAAZAAkAAAAAAAEAAAAZAAoAAAAAAAEAAAAZAAsAAAAAAAEAAAAZAAwAAAAAAAEAAAAZAA0AAAAAAAEAAAAZAA4AAAAAAAEAAAAZAA8AAAAAAAEAAAAZABAAAAAAAAEAAAAZABEAAAAAAAEAAAAZABIAAAAAAAEAAAAZABMAAAAAAAEAAAD/////AAADAAAAAAAZAP//AAAEAAAAAAAZABQAAAAEAAEAAAD//xQAAAADAAEAAAA=")
-tile_set = SubResource("TileSet_ucive")
+tile_set = SubResource("TileSet_ljmna")
 
 [node name="Player" parent="." instance=ExtResource("3_ucive")]
 position = Vector2(1126, 840)
