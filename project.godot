@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Brotato"
+run/main_scene="uid://cpbvsqbkrjei6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManage="*res://scripts/core/GameManage.gd"
 
 [display]
 
@@ -24,6 +29,8 @@ window/stretch/mode="canvas_items"
 
 2d_physics/layer_1="BackgroupLayer"
 2d_physics/layer_2="PlayerLayer"
+2d_physics/layer_3="bulletLayer"
+2d_physics/layer_4="enemy"
 
 [rendering]
 

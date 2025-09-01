@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coqb35woy2ako"
-path="res://.godot/imported/enemies_hurt.png-1059d22ac56aced07c9d71721700af80.ctex"
+uid="uid://cdb0gc1fq6hpd"
+path="res://.godot/imported/Shotgun1.png-795d879a04dbee294ac2ce1096c7242b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/类土豆兄弟/enemies_hurt.png"
-dest_files=["res://.godot/imported/enemies_hurt.png-1059d22ac56aced07c9d71721700af80.ctex"]
+source_file="res://assets/art/items/weapon/bullet/Shotgun1.png"
+dest_files=["res://.godot/imported/Shotgun1.png-795d879a04dbee294ac2ce1096c7242b.ctex"]
 
 [params]
 

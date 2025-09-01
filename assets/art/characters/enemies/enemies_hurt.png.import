@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tn4rt6e166sd"
-path="res://.godot/imported/enemies_dead.png-66c2bdfceacbabfb4c2ea6063d8945c6.ctex"
+uid="uid://coqb35woy2ako"
+path="res://.godot/imported/enemies_hurt.png-111321fcb5f75963a92d1d1c4bb444f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/类土豆兄弟/enemies_dead.png"
-dest_files=["res://.godot/imported/enemies_dead.png-66c2bdfceacbabfb4c2ea6063d8945c6.ctex"]
+source_file="res://assets/art/characters/enemies/enemies_hurt.png"
+dest_files=["res://.godot/imported/enemies_hurt.png-111321fcb5f75963a92d1d1c4bb444f3.ctex"]
 
 [params]
 
