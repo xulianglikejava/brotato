@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var self_pos= position
 	if mouse_pos >= self_pos:
@@ -32,7 +32,9 @@ func choose_player(type):
 	
 	var sprite_frame_custom = SpriteFrames.new()
 	
-	sprite_frame_custom.add_animation("default")
+	# 检查是否已存在default动画
+	if not sprite_frame_custom.has_animation("default"):
+		sprite_frame_custom.add_animation("default")
 	sprite_frame_custom.set_animation_loop("default",true)
 	var texture_size = Vector2(960,240)
 	var sprite_size = Vector2(240,240)
