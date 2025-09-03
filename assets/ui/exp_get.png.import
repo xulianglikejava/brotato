@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://leacak25tkta"
-path="res://.godot/imported/gold_get.png-145983abd0d4bf61a160f2b280c0f99f.ctex"
+uid="uid://b4126mtyd22og"
+path="res://.godot/imported/exp_get.png-7d820dbdea80237c78c7ceb3492d5d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/类土豆兄弟/gold_get.png"
-dest_files=["res://.godot/imported/gold_get.png-145983abd0d4bf61a160f2b280c0f99f.ctex"]
+source_file="res://assets/ui/exp_get.png"
+dest_files=["res://.godot/imported/exp_get.png-7d820dbdea80237c78c7ceb3492d5d01.ctex"]
 
 [params]
 
