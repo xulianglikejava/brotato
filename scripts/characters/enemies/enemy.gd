@@ -35,7 +35,17 @@ func enemy_dead():
 		"box":GameManage.duplicate_node,
 		"ani_name":"enemy_dead",
 		"position":self.global_position,
-		"scale":Vector2(1,1),
+		"scale":Vector2(0.7,0.7),
 	}
 	)
+	
+	GameManage.drop_items_scene_obj.gen_drop_items({
+		"box":GameManage.duplicate_node,
+		"ani_name":"gold",
+		"position":self.global_position,
+		"scale":Vector2(2,2),
+	}
+	)
+	
+	
 	self.queue_free()	

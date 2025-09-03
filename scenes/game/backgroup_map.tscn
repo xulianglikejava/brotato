@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://cpbvsqbkrjei6"]
+[gd_scene load_steps=10 format=4 uid="uid://cpbvsqbkrjei6"]
 
 [ext_resource type="Texture2D" uid="uid://vyqj1c48nh56" path="res://assets/类土豆兄弟/bg.png" id="1_3eaar"]
 [ext_resource type="Script" uid="uid://dyc1o2u6xd6nd" path="res://scripts/scenes/backgroup_map.gd" id="1_hfu8n"]
 [ext_resource type="PackedScene" uid="uid://d4i4b28xexjlo" path="res://scenes/characters/player/player.tscn" id="3_ucive"]
 [ext_resource type="PackedScene" uid="uid://cqrk8r6t1ym7m" path="res://scenes/characters/enemies/now_enemies.tscn" id="4_ljmna"]
+[ext_resource type="PackedScene" uid="uid://btbi3fqiodw8l" path="res://scenes/ui/game_ui.tscn" id="5_mal1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfu8n"]
 texture = ExtResource("1_3eaar")
@@ -100,3 +101,7 @@ tile_set = SubResource("TileSet_ljmna")
 position = Vector2(1126, 840)
 
 [node name="now_enemies" parent="." instance=ExtResource("4_ljmna")]
+
+[node name="game_ui" parent="." instance=ExtResource("5_mal1t")]
+
+[connection signal="round_end" from="game_ui" to="." method="_on_game_ui_round_end"]

@@ -1,0 +1,170 @@
+[gd_scene load_steps=6 format=3 uid="uid://btbi3fqiodw8l"]
+
+[ext_resource type="Texture2D" uid="uid://cjr74ja6s2k4l" path="res://assets/art/items/gold.png" id="1_gwk6t"]
+[ext_resource type="Script" uid="uid://bkcjnq57e2uq7" path="res://scripts/ui/game_ui.gd" id="1_xjfbv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ndix"]
+bg_color = Color(0.262932, 0.262932, 0.262932, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwk6t"]
+bg_color = Color(0.647105, 0, 0.138211, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjfbv"]
+bg_color = Color(0.201572, 0.649181, 0.446152, 1)
+
+[node name="game_ui" type="CanvasLayer"]
+script = ExtResource("1_xjfbv")
+
+[node name="status" type="MarginContainer" parent="."]
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 281.0
+offset_bottom = 143.0
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="status"]
+layout_mode = 2
+
+[node name="hp" type="MarginContainer" parent="status/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="status/VBoxContainer/hp"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="status/VBoxContainer/hp/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "HP:"
+horizontal_alignment = 2
+
+[node name="hp_bar" type="ProgressBar" parent="status/VBoxContainer/hp/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_1ndix")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gwk6t")
+value = 22.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="status/VBoxContainer/hp/HBoxContainer/hp_bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -11.5
+offset_right = 26.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "80/100"
+
+[node name="exp" type="MarginContainer" parent="status/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="status/VBoxContainer/exp"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="status/VBoxContainer/exp/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "EXP:"
+horizontal_alignment = 2
+
+[node name="exp_bar" type="ProgressBar" parent="status/VBoxContainer/exp/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_1ndix")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xjfbv")
+value = 22.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="status/VBoxContainer/exp/HBoxContainer/exp_bar"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -11.5
+offset_right = -10.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "LV.100"
+horizontal_alignment = 2
+
+[node name="gold" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 92.0
+offset_top = 153.0
+offset_right = 132.0
+offset_bottom = 176.0
+text = "100"
+metadata/_edit_group_ = true
+
+[node name="Control" type="Control" parent="gold"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="gold/Control"]
+position = Vector2(-30, 0)
+scale = Vector2(2.0625, 2.0625)
+texture = ExtResource("1_gwk6t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="time_show" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 860.0
+offset_top = 98.0
+offset_right = 1020.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "剩余时间"
+horizontal_alignment = 1
+
+[node name="timer" type="Timer" parent="Control"]
+
+[node name="now_round" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 880.0
+offset_top = 23.0
+offset_right = 1000.0
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "第一波"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Control/timer" to="." method="_on_timer_timeout"]

@@ -28,3 +28,8 @@ func _ready() -> void:
 	random_glass()
 	
 	
+
+
+func _on_game_ui_round_end() -> void:
+	print("round end")
+	pass # Replace with function body.

@@ -31,6 +31,7 @@ window/stretch/mode="canvas_items"
 2d_physics/layer_2="PlayerLayer"
 2d_physics/layer_3="bulletLayer"
 2d_physics/layer_4="enemy"
+2d_physics/layer_5="drop_item"
 
 [rendering]
 

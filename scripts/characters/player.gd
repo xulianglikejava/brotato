@@ -6,6 +6,12 @@ var dir = Vector2.ZERO
 var Speed = 700
 var flip = false
 var mouse_stop = false
+var now_hp = 100
+var max_hp = 100
+var max_exp = 5
+var now_exp = 0
+var level = 1
+var gold = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,10 +38,7 @@ func choose_player(type):
 	
 	var sprite_frame_custom = SpriteFrames.new()
 	
-	# 检查是否已存在default动画
-	if not sprite_frame_custom.has_animation("default"):
-		sprite_frame_custom.add_animation("default")
-	sprite_frame_custom.set_animation_loop("default",true)
+
 	var texture_size = Vector2(960,240)
 	var sprite_size = Vector2(240,240)
 	
@@ -61,4 +64,30 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_stop = false
+	pass # Replace with function body.
+
+
+func _on_drop_item_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("drop_items"):
+		body.canMoving = true
+		self.now_exp += 1
+		self.gold += 1
+		if self.now_exp >= self.max_exp:
+			self.now_exp = 0
+			self.level += 1
+		
+		
+	pass # Replace with function body.
+
+
+func _on_stop_body_entered(body: Node2D) -> void:
+	if body.is_in_group("drop_items"):
+		body.queue_free()
+		
+	pass # Replace with function body.
+
+
+func _on_hurt_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		self.now_hp -= 1
 	pass # Replace with function body.

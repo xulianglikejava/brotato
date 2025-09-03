@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4i4b28xexjlo"]
+[gd_scene load_steps=12 format=3 uid="uid://d4i4b28xexjlo"]
 
 [ext_resource type="Texture2D" uid="uid://bq5w0pu0ew0rn" path="res://assets/art/characters/players/player1/player1-sheet.png" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://bhw3y3aianvs8" path="res://scripts/characters/player.gd" id="1_t61fv"]
@@ -44,6 +44,13 @@ animations = [{
 radius = 48.0
 height = 204.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_686vu"]
+radius = 576.68
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_686vu"]
+radius = 48.0
+height = 204.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 20
 scale = Vector2(0.5, 0.5)
@@ -66,22 +73,42 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="stop" type="Area2D" parent="."]
+collision_mask = 16
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="stop"]
 position = Vector2(-5, 8)
 shape = SubResource("CapsuleShape2D_7uws0")
 
-[node name="Area2D" type="Area2D" parent="Area2D"]
+[node name="Area2D" type="Area2D" parent="stop"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D/Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="stop/Area2D"]
 position = Vector2(-5, 8)
 shape = SubResource("CapsuleShape2D_7uws0")
 
-[node name="NowWeapon" parent="Area2D" instance=ExtResource("3_686vu")]
+[node name="NowWeapon" parent="stop" instance=ExtResource("3_686vu")]
 position = Vector2(-2, 2)
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="mouse_entered" from="Area2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="drop_item_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drop_item_area"]
+shape = SubResource("CircleShape2D_686vu")
+debug_color = Color(0.420993, 0.59964, 0.205254, 0.42)
+
+[node name="hurt" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt"]
+shape = SubResource("CapsuleShape2D_686vu")
+debug_color = Color(0.530592, 0.072865, 0.1969, 0.42)
+
+[connection signal="body_entered" from="stop" to="." method="_on_stop_body_entered"]
+[connection signal="mouse_entered" from="stop" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="stop" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="stop/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="stop/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="drop_item_area" to="." method="_on_drop_item_area_body_entered"]
+[connection signal="body_entered" from="hurt" to="." method="_on_hurt_body_entered"]
