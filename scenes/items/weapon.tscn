@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cb375lormjc6j"]
 
-[ext_resource type="Script" uid="uid://b8pw15skau7qi" path="res://scripts/items/weapon.gd" id="1_q5le8"]
+[ext_resource type="Script" path="res://scripts/items/weapon.gd" id="1_q5le8"]
 [ext_resource type="Texture2D" uid="uid://0n1nh6tifc3p" path="res://assets/art/items/weapon/weapon1/weapon1.png" id="1_uimte"]
-[ext_resource type="Shader" uid="uid://deg03crb0a48q" path="res://scenes/items/weapon2.gdshader" id="2_q5le8"]
+[ext_resource type="Shader" path="res://scenes/items/weapon2.gdshader" id="2_q5le8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k0op2"]
 shader = ExtResource("2_q5le8")

@@ -31,5 +31,11 @@ func enemy_hurt(hurt):
 		enemy_dead()
 		
 func enemy_dead():
-	
+	GameManage.animation_scene_obj.run_animation({
+		"box":GameManage.duplicate_node,
+		"ani_name":"enemy_dead",
+		"position":self.global_position,
+		"scale":Vector2(1,1),
+	}
+	)
 	self.queue_free()	
